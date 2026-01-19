@@ -5,9 +5,10 @@
 .set CHECKSUM, -(MAGIC + FLAGS)
 
 .section .multiboot
-    .long MAGIC
-    .long FLAGS
-    .long CHECKSUM
+.align 4
+.long MAGIC
+.long FLAGS
+.long CHECKSUM
 
 .section .text
 .global _start
@@ -19,4 +20,3 @@ _start:
 .hang:
     hlt
     jmp .hang
-    
