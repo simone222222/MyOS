@@ -1,11 +1,33 @@
 ENTRY(_start)
 
-SECTIONS {
+SECTIONS
+{
     . = 1M;
 
-    .text : { *(.text*) }
-    .rodata : { *(.rodata*) }
-    .data : { *(.data*) }
-    .bss : { *(.bss*) }
+    .multiboot :
+    {
+        *(.multiboot)
+    }
+
+    .text :
+    {
+        *(.text*)
+    }
+
+    .rodata :
+    {
+        *(.rodata*)
+    }
+
+    .data :
+    {
+        *(.data*)
+    }
+
+    .bss :
+    {
+        *(.bss*)
+    }
 }
+
 
